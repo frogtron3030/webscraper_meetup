@@ -50,9 +50,10 @@ for index, tr in enumerate(table_doc.xpath("tr//td[@class='title']/a")):
         data_hash['score'] = score
         data.append(data_hash)
             
-    db = client.test_database
-    collection = db.test_collection
-    collection.insert(data)
+client = MongoClient()
+db = client.test_database
+collection = db.test_collection
+collection.insert(data)
 
 
 
